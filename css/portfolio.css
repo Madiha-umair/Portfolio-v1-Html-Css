@@ -20,7 +20,7 @@ body{
 .grid-body {
   display:grid;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-  grid-template-rows: 185px 965px 610px 696px;
+  grid-template-rows: 185px 765px 610px 696px;
   grid-template-areas: "header header "
                         "main main"
                         "section1 section2"
@@ -79,7 +79,7 @@ h1, h2, h3{
   font-weight:lighter;
 }
 h1{
-  font-size:70px;
+  font-size:50px;
   padding:30px;
 }
 h2{
@@ -96,7 +96,7 @@ h3{
   display:grid;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
   grid-template-areas:"side1 center side2";
-  grid-template-rows:965px;
+  grid-template-rows:765px;
   background-color:var(--black);
   color:var(--light-yellow);  
   width:calc(100% + 2rem);
@@ -127,12 +127,12 @@ h3{
   left:10px; 
 }
 #side2{
-  margin:40px 80px 0 0px;
+  margin:40px 0px 0 30px;
 }
 /*Profile Picture Hover Effect*/
 .profile-picture, .alter-picture{
-  width:540px;
-  height:865px;
+  width:490px;
+  height:665px;
 }
 #images{
   position:relative;
@@ -149,12 +149,13 @@ h3{
   display:block;
 }
 #btn{
-  width: 311px;
-  height:83px;
-  font-size: 36px;
-  background-color: var(--light-yellow) ;
-  margin:80px 0 0 30px;
+  width: 180px;
+  height: 63px;
+  font-size: 22px;
+  background-color: var(--light-yellow);
+  margin: 0px 0 0 30px;
 }
+    
 .section-one,
 .section-two {
   background-color: var(--light-pink);
@@ -163,7 +164,7 @@ h3{
 .section-one{
   grid-area: section1;
   width:609px;
-  margin:40px 0 40px 150px;
+  margin:40px 0 40px 50px;
 }
 .section-two {
   grid-area: section2;
