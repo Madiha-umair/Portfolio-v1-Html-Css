@@ -1,0 +1,670 @@
+@import url('https://fonts.cdnfonts.com/css/fanwood-text');
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Fanwood+Text&family=IBM+Plex+Serif&display=swap');
+:root{
+  --white:       #ffffff;
+  --black:       #000000;
+  --rose-bud:    #ff9f9f;
+  --light-yellow:#fffad7;
+  --light-pink:  rgb(255,159,159,67%);
+}
+html{
+  box-sizing:border-box;
+}
+*, *::before, *::after{
+  box-sizing:inherit;
+}
+body{
+  margin:0;
+}
+/* BODY LAYOUT */
+.grid-body {
+  display:grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  grid-template-rows: 185px 965px 610px 696px;
+  grid-template-areas: "header header "
+                        "main main"
+                        "section1 section2"
+                        "footer footer";
+width: 100%;
+}
+.item:first-child {
+  grid-area: header;
+}
+.item:nth-child(2) {
+  grid-area: main;
+}
+.item:nth-child(3) {
+  grid-area: section1;
+}
+.item:nth-child(4) {
+  grid-area: section2;
+}
+.item:nth-child(5) {
+  grid-area: footer;
+}
+#header {
+  background-color:var(--white); 
+  grid-area:header;
+  font-family:'Fanwood Text', serif;
+  font-size:28px;
+}
+.menu {
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-around;
+  align-items:center;
+  padding:1em;
+  font-family:'Calistoga', cursive;
+  font-weight:lighter;
+}
+.logo{
+  width:150px;
+  height:150px;
+}
+#item8{
+  display:none;
+}
+.menu #item1{
+  text-align:left;
+}
+a{
+  color:var(--black);
+}
+a:hover {
+  background-color:var(--light-pink);
+}
+h1, h2, h3{
+  font-family:'Calistoga', cursive;
+  display:inline-block;
+  font-weight:lighter;
+}
+h1{
+  font-size:70px;
+  padding:30px;
+}
+h2{
+  font-size:50px ;
+}
+h3{
+  font-size:40px;
+  position:relative;
+  left:600px;
+}
+ /* MAIN LAYOUT*/
+.grid-main {
+  grid-area:main; 
+  display:grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+  grid-template-areas:"side1 center side2";
+  grid-template-rows:965px;
+  background-color:var(--black);
+  color:var(--light-yellow);  
+  width:calc(100% + 2rem);
+  margin:0 -1rem;            
+}
+.side1{
+  grid-area: side1; 
+}
+.center{
+  grid-area: center; 
+}
+.side2{
+  grid-area: side2; 
+}
+.side1, #side2{
+  font-weight: lighter;
+  position: relative;
+  top:270px;
+  letter-spacing: 5px;
+  text-shadow:0px 10px 4px #e97777;
+  font-size: 50px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+.side1{
+  margin:40px 0 0 60px;
+  position:relative;
+  left:10px; 
+}
+#side2{
+  margin:40px 80px 0 0px;
+}
+/*Profile Picture Hover Effect*/
+.profile-picture, .alter-picture{
+  width:540px;
+  height:865px;
+}
+#images{
+  position:relative;
+  top:50px;
+}
+#images .alter-picture{
+  display:none;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index:99;
+}
+#images:hover .alter-picture{
+  display:block;
+}
+#btn{
+  width: 311px;
+  height:83px;
+  font-size: 36px;
+  background-color: var(--light-yellow) ;
+  margin:80px 0 0 30px;
+}
+.section-one,
+.section-two {
+  background-color: var(--light-pink);
+  box-shadow: 8px 8px 4px rgb(0,0,0,25%);
+}
+.section-one{
+  grid-area: section1;
+  width:609px;
+  margin:40px 0 40px 150px;
+}
+.section-two {
+  grid-area: section2;
+  width:597px;
+  margin:40px 25px 40px 50px;
+}
+#section-one-heading{
+  text-align:justify;
+  margin: 0 0 0 80px;
+}
+#section-two-heading{
+  text-align:justify;
+  margin: 0 0 0 160px;
+}
+#section-one-heading img,
+#section-two-heading img{
+  margin:0 0 0 60px;
+}
+/*Changing The Bullet Color To Yellow*/
+.section-one li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color:var(--light-yellow);
+  font-weight: bolder; 
+  display: inline-block;
+  width: 1em; /* for space (tweak if needed) */
+  margin-left: -1em; /*for space (tweak if needed) */
+}
+.section-one li{
+  font-family: 'Fanwood Text', sans-serif;
+  font-size: 38px;
+  font-weight: lighter;
+  list-style: none;
+  margin:0 0px 60px 0px;
+}
+.section-two li{
+  font-family: 'Fanwood Text', sans-serif;
+  font-size: 30px;
+  list-style: none;
+  width:227px;
+  height:56px;
+  padding: 12px;
+  margin:0 20px 32px 20px;
+  background-color: var(--light-yellow);
+  display: inline-block;
+  text-align: center;
+}
+#footer{
+  grid-area: footer;
+  background:url("../images/thank-you.jpg") center center no-repeat #fff;
+}
+form{
+  padding:0 0 2em 0;
+  position:relative;
+  left:460px;
+}
+#field-wrapper1, #field-wrapper2, #field-wrapper3 {
+  font-size: 35px;
+  font-family:'Fanwood Text';
+  font-weight: lighter;
+  margin: 0 0 20px 0;
+}
+#field-wrapper1 input{
+  background-color: var(--light-yellow);
+  height:40px;
+  width:338px;
+  border: 3px solid #040404;
+}
+#field-wrapper1 input::placeholder {
+  font-size:25px;
+  font-family: 'Fanwood Text', sans-serif;
+  color:var(--black);
+}
+#field-wrapper2 input{
+  background-color: var(--light-yellow);
+  border: 3px solid #040404;
+  height: 40px;
+  width:687px;
+}
+#field-wrapper3 textarea{
+  background-color: var(--light-yellow);
+  border: 3px solid #040404;
+  width:687px;
+  height:70px;
+}
+#form-button{
+  position: relative;
+  left:240px;
+}
+#form-submit{
+  width:200px;
+  height:38px;
+  background-color: var(--light-yellow);
+  border-radius:20px;
+  padding:3px;
+  font-size:25px;
+  border:3px solid #040404;
+}
+label{
+  display:block; /* make labels stacked by default */
+}
+.profile{
+  position: relative;
+  left: 590px;
+}
+.profile img{
+  margin: 0 70px 0 0;
+}
+#copyright{
+  position: relative;
+  left: 590px;
+  font-size: 25px;
+  font-family: 'Fanwood Text', sans-serif;
+}
+/********************** TABLET STYLE **********************/
+@media screen and (max-width:768px) {
+#header{
+  font-size: 22px;
+}
+.grid-body {    
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-template-rows: 116px 556px 466px 634px;
+}
+.logo{
+  width:80px;
+  height:80px;
+}
+h1{
+  font-size: 40px;
+  padding:0px;
+}
+h2{
+  font-size:35px ;
+}
+.grid-main{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+  margin-bottom: 1rem;
+  grid-template-rows: 556px;
+}
+.side1,#side2{
+  top:0;
+  
+  top:140px;
+  letter-spacing: 0;
+  text-shadow:0px 4px 4px #e97777;
+}
+.side1{
+  margin: 40px 0 0 60px;
+}
+#side2{
+  margin: 40px 0 0 40px;
+}
+#images{
+  top:45px;
+}
+.profile-picture, .alter-picture{
+  width:303px;
+  height:449px;
+  position:relative;
+  /*left:-50px;*/
+}
+#btn{
+  width: 142px;
+  height:49px;
+  font-size: 28px;
+  margin:60px 0 0 0;
+  font-family:'Calistoga', cursive;
+  font-weight: lighter;
+}
+#section-one-heading{
+  font-size:35px ;
+  margin: 0 0 0 40px;
+}
+#section-two-heading{
+  font-size:35px ;
+  margin: 0 0 0 80px;
+}
+#section-one-heading img
+{
+  width:35px;
+  height:30px;
+  margin:0 0 0 20px;
+}
+#section-two-heading img{
+  width:30px;
+  height:28px;
+  margin:0 0 0 20px;
+}
+.section-one{
+  width:365px;
+  height: 394px;
+  /*margin:0 10px 0 5px;*//* I keep this margin here because sometimes screen sets
+                              with this margin and sometimes with the other one i dont know what i am doing wrong */
+  margin:0 10px 0 25px;
+  position:relative;
+  top:27px;
+}
+.section-two {
+  width:331px;
+  height:394px;
+  /*margin:0px;*/
+  margin:0px 0 0 40px;
+  position:relative;
+  top:27px;
+}
+.section-one ul{
+  margin:0;
+}
+.section-two ul{
+  margin:0;
+  padding:0;
+}
+.section-one li{
+font-size:28px;
+margin:0px 0px 30px 0px;
+}
+.section-two li{
+  font-size: 23px;
+  width:140px;
+  padding:10px 0;
+  height:47px;
+  margin:0px 4px 30px 14px;
+}
+#footer {
+  background:url("../images/for-tablet.png") center center no-repeat #fff;
+}
+form {
+  padding:0 0 2em 0;
+  left: 75px;
+}
+h3{
+  font-size: 30px;
+  left: 75px;
+}
+#field-wrapper1, #field-wrapper2, #field-wrapper3 {
+  font-size: 25px;
+}
+#field-wrapper1 input{
+  height: 38px;
+  width:306px;
+}
+#field-wrapper2 input{
+  height: 38px;
+  width:619px;
+}
+#field-wrapper3 textarea{
+  width:619px;
+  height:74px;
+}
+#form-submit{
+  width:138px;
+  height:38px;
+  font-size: 20px;
+}
+.profile{
+  left:300px;
+}
+.profile img{
+  width:46px;
+  height:46px;
+  margin: 0 20px 10px 0;
+}
+#copyright{
+  font-size: 20px;
+  left: 220px;
+  font-size: 20px;
+}
+}
+/********************** LANDSCAPE PHONE STYLE ****************************/
+@media screen and (max-width:320px) {
+#header{
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 18px;
+}
+#item2,#item3,#item4, #item5, #item6, #item7{
+  display:none;
+}
+#item8{
+  display:inline-block;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: lighter;
+  padding:0 50px 10px 0;
+  position:relative; 
+}
+#item8 ul {
+  background-color: #D9D9D9;
+  position:absolute;
+  left:-10000px;
+  top:1em;
+  width:90px;
+}
+#item8 li {
+  display: block;
+  padding: 5px 0;
+  margin-top:0;
+}
+#item8:hover ul {
+  left:0;
+  z-index:10;
+  padding:10px;
+}
+.logo{
+  width:50px;
+  height:50px;
+}
+.menu{
+  padding:8px 0 2px 20px;
+  justify-content: space-between;
+}
+.grid-body {
+  grid-template-columns: minmax(0,1fr);
+  grid-template-rows: 66px 227px 221px 234px 297px;
+  grid-template-areas: "header "
+                        "main"
+                        "section1"
+                        "section2"
+                        "footer";
+}
+h1{
+  font-size: 28px;
+  font-weight: bold;
+  font-family:  'IBM Plex Serif', serif; 
+  padding:0px;
+}
+#side2 h1{
+  font-size: 18px;
+  font-weight:lighter;
+  text-shadow: none;
+}
+h2{
+  font-family:  'IBM Plex Serif', serif; 
+  font-size:18px ;
+  font-weight:bold;
+}
+h3{
+  font-family:  'IBM Plex Serif', serif; 
+  font-size: 15px;
+  font-weight:bold;
+  left:15px;
+}
+.grid-main {
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  grid-template-rows: 156px 71px;   /*156 + 71 =227*/
+  grid-template-areas: "side1 center "
+                       "side2 center"
+                       "btn center"
+}
+.side1{
+  position: relative;
+  top:8px;
+  font-family:'IBM Plex Serif', serif; 
+  padding: 0 18px;
+  text-shadow:0px 3px 4px #e97777;
+  font-size: 28px;
+  margin:0;
+  -webkit-text-stroke-width: 0px;
+  letter-spacing: 1px;
+}
+#side2 {
+  top: -48px;
+  margin: 0px 0px 0 25px; 
+  -webkit-text-stroke-width: 0px;
+  padding:0;
+  position:relative;
+  font-family:'IBM Plex Serif', serif; 
+  text-transform:lowercase;
+  font-size: 18px;
+}
+#btn{
+  margin-top:40px;
+  padding:0;
+  width: 80px;
+  height:29px;
+  grid-area: btn; 
+  border:none;
+  font-size: 15px;
+  font-family:'IBM Plex Serif', serif; 
+  font-weight:600;
+}
+#images{
+  top: 18px;
+  left:-5px;
+}
+.profile-picture, .alter-picture{
+  width:150px;
+  height:190px;
+  margin: 0 20px 0 0;
+}
+.profile-picture{
+  left:0;
+}
+.section-one, .section-two{
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  /*margin-left: 2px;*/
+  margin-left: 15px;
+  display: block;
+  width:288px;
+  height:198px;
+  top:0;
+}
+.section-two {
+  margin-top: 19px;
+}
+#section-one-heading{
+  font-size:18px ;
+  margin: 0 0 0 40px;
+}
+#section-two-heading{
+  font-size:18px ;
+  margin: 0 0 0 30px;
+}
+#section-one-heading img
+{
+  width:31px;
+  height:19px;
+  margin:0 0 0 20px;
+}
+#section-two-heading img{
+  width:16px;
+  height:15px;
+  margin:0 0 0 20px;
+}
+.section-two ul{
+  margin:0 0 0 20px;
+}
+.section-one li{
+  font-size:15px;
+  font-family:  'IBM Plex Serif', serif; 
+  margin:0px 0px 10px 0px;
+}
+.section-two li{
+  font-size: 18px;
+  font-family: 'IBM Plex Serif', serif; 
+  width:97px;
+  height:24px;
+  margin: 0 35px 11px 0;
+  text-transform: lowercase;
+  padding: 0;
+}
+#footer {
+  background:url("../images/for-phone.png") center center no-repeat #fff;
+  margin-top: 19px;
+}
+form {
+  left: 15px;
+}
+#field-wrapper1, #field-wrapper2, #field-wrapper3 {
+  font-size: 13px;
+  font-weight:lighter;
+  font-family:'IBM Plex Serif', serif; 
+  margin: 0 0 8px 0;
+}
+#field-wrapper1 input{
+  height: 17px;
+  width:136px;
+  border: 1px solid #040404;
+}
+#field-wrapper1 #fname{
+  margin-right: 12px;
+}
+#field-wrapper1 input::placeholder {
+  font-size: 10px;
+  font-weight: lighter;
+  font-family:  'IBM Plex Serif', serif; 
+}
+#field-wrapper2 input{
+  height: 15px;
+  width:207px;
+  border: 1px solid #040404;
+}
+#field-wrapper3 textarea{
+  width:288px;
+  height:37px;
+  border: 1px solid #040404;
+}
+#form-submit{
+  width:73px;
+  height:19px;
+  font-size: 10px;
+  font-weight: lighter;
+  font-family:  'IBM Plex Serif', serif; 
+  border: 1px solid #040404;
+  padding:1px;
+}
+#form-button{
+  position: relative;
+  left:103px;
+}
+.profile{
+  left:101px;
+  top:-18px;
+}
+.profile img{
+  width:20px;
+  height:20px;
+  margin: 0 20px 10px 0;
+}
+#copyright{
+  font-size:10px;
+  left:50px;
+  top:-24px;
+  font-weight:lighter;
+  font-family:'IBM Plex Serif', serif; 
+}
+}
